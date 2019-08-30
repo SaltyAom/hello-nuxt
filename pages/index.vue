@@ -3,12 +3,12 @@
         <h1 id="title">Hello Nuxt</h1>
         <p id="counter">
             {{ counter }}
-            <span id="counter-text">Count</span>
         </p>
-        <div id="control-panel">
+        <span id="counter-text">Count</span>
+        <form id="control-panel" v-on:submit.prevent>
             <button @click="increase" class="control">Increase</button>
             <button @click="decrease" class="control">Decrease</button>
-        </div>
+        </form>
     </div>
 </template>
 
@@ -48,12 +48,14 @@
         cursor: default;
     }
     #counter {
+        min-width: 100px;
         font-size: 84px;
         color: #41b883;
         font-weight: lighter;
         text-align: center;
         margin: 30px 0 10px 0;
         cursor: default;
+        outline: none;
     }
     #counter-text {
         display: block;
@@ -61,7 +63,7 @@
         color: #41b883;
         font-weight: lighter;
             text-align: center;
-        margin: 10px 0 30px 0;
+        margin: 10px 0 40px 0;
         cursor: default;
     }
     #landing {

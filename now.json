@@ -1,0 +1,26 @@
+{
+    "version": 2,
+    "name": "Hello Nuxt.js",
+    "alias": "salty-nuxt.now.sh",
+    "builds": [
+        { 
+            "src": "nuxt.config.js",
+            "use": "@nuxtjs/now-builder"
+        }
+    ],
+    "routes": [
+        {
+            "src":"/.*",
+            "headers": { 
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET",
+                "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
+                "x-now-cache": "HIT",
+                "cache-control": "immutable,max-age=31536000",
+                "Accept-Encoding": "br",
+                "Service-Worker-Allowed": "/"
+            } 
+        }
+    ],
+    "regions": ["all"]
+}
